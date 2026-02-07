@@ -17,7 +17,7 @@ class UserItemMaster extends Model
         'cat_id',
         'price',
     ];
-    // Relationship: Item belongs to Category
+    // Relationship: Item belongs to Category master
     public function category()
     {
         return $this->belongsTo(ResCategoryMaster::class, 'cat_id', 'cat_id');
