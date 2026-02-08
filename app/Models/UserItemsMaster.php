@@ -21,6 +21,6 @@ class UserItemsMaster extends Model
     // Relationship: Order belongs to User
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(UserMaster::class, 'user_id', 'userid');
     }
 }

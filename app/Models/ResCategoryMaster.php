@@ -18,6 +18,6 @@ class ResCategoryMaster extends Model
     // Relationship: Category has many Items
     public function items()
     {
-        return $this->hasMany(UserItemMaster::class, 'category_id', 'category_id');
+        return $this->hasMany(UserItemMaster::class, 'cat_id', 'category_id');
     }
 }
