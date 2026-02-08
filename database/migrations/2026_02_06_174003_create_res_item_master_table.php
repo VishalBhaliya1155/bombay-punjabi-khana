@@ -23,7 +23,7 @@ return new class extends Migration
 
             // Foreign Key Relation
             $table->foreign('cat_id')
-                ->references('cat_id')
+                ->references('category_id')
                 ->on('res_category_master')
                 ->onDelete('cascade');
         });
