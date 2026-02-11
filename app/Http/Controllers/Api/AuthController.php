@@ -39,12 +39,14 @@ class AuthController extends Controller
         //         'message' => 'Invalid password'
         //     ], 401);
         // }
-if ($request->password !== $user->userpassword) {
-    return response()->json([
-        'status' => false,
-        'message' => 'Invalid password'
-    ], 401);
-}
+        if ($request->password !== $user->userpassword) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Invalid password'
+            ], 401);
+        }
+
+        $token = $user->createToken('api')->plainTextToken;
 
         return response()->json([
             'status' => true,
@@ -54,7 +56,8 @@ if ($request->password !== $user->userpassword) {
                 'role' => $user->userrole,
                 'name' => $user->userfname . ' ' . $user->userlname,
                 'email' => $user->email,
-                'mobile' => $user->mobile
+                'mobile' => $user->mobile,
+                'token' => $token
             ]
         ]);
     }
