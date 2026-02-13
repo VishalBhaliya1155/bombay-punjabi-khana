@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
 
-class UserItemMaster extends Model
+class ResItemMaster extends Model
 {
     use HasFactory;
 
@@ -20,6 +20,6 @@ class UserItemMaster extends Model
     // Relationship: Item belongs to Category
     public function category()
     {
-        return $this->belongsTo(ResCategoryMaster::class, 'cat_id', 'cat_id');
+        return $this->belongsTo(ResCategoryMaster::class, 'cat_id', 'category_id');
     }
 }

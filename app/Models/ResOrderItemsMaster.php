@@ -27,6 +27,6 @@ class ResOrderItemsMaster extends Model
     // Item belongs to ResItem
     public function item()
     {
-        return $this->belongsTo(ResOrderItemsMaster::class, 'item_id', 'item_id');
+        return $this->belongsTo(ResItemMaster::class, 'item_id', 'item_id');
     }
 }
