@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\UserItemMaster;
+use App\Models\ResItemMaster;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
     public function index()
     {
-        $items = UserItemMaster::with('category')
+        $items = ResItemMaster::with('category')
             ->orderBy('item_id', 'desc')
             ->get();
 
@@ -29,7 +29,7 @@ class ItemController extends Controller
             'price' => 'required|integer|min:0',
         ]);
 
-        $item = UserItemMaster::create($validated);
+        $item = ResItemMaster::create($validated);
 
         return response()->json([
             'status' => true,
@@ -40,7 +40,7 @@ class ItemController extends Controller
 
     public function show($id)
     {
-        $item = UserItemMaster::with('category')->find($id);
+        $item = ResItemMaster::with('category')->find($id);
 
         if (!$item) {
             return response()->json([
@@ -58,7 +58,7 @@ class ItemController extends Controller
 
     public function update(Request $request, $id)
     {
-        $item = UserItemMaster::find($id);
+        $item = ResItemMaster::find($id);
 
         if (!$item) {
             return response()->json([
@@ -84,7 +84,7 @@ class ItemController extends Controller
 
     public function destroy($id)
     {
-        $item = UserItemMaster::find($id);
+        $item = ResItemMaster::find($id);
 
         if (!$item) {
             return response()->json([

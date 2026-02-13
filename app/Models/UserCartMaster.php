@@ -27,6 +27,6 @@ class UserCartMaster extends Model
     // Relationship: Cart belongs to Item
     public function item()
     {
-        return $this->belongsTo(UserItemMaster::class, 'item_id', 'item_id');
+        return $this->belongsTo(ResItemMaster::class, 'item_id', 'item_id');
     }
 }

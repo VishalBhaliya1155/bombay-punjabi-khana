@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User;
 
-class UserItemMaster extends Model
+class ResItemMaster extends Model
 {
     use HasFactory;
 
